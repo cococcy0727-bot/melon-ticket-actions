@@ -1,4 +1,4 @@
-name: Telegram Bot
+name: example
 on:
   schedule:
     - cron: '*/5 * * * *' # Every 5 minutes
@@ -8,11 +8,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Check Tickets
-        uses: appleboy/telegram-action@master
+        uses: mooyoul/melon-ticket-actions@v1.1.0
         with:
-          product-id: 212702
+          product-id: 204755
           schedule-id: 100001
           seat-id: 1_0
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: '有票了 快搶!'
+          slack-incoming-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          message: 'test'
