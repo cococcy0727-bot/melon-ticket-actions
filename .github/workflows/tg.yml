@@ -8,12 +8,11 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Check Tickets
-        uses: mooyoul/melon-ticket-actions@v1.1.0
+        uses: appleboy/telegram-action@master
         with:
           product-id: 212702
           schedule-id: 100001
           seat-id: 1_0
-          slack-incoming-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: '有票了 快搶!'
