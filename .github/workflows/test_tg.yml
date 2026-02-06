@@ -1,0 +1,16 @@
+name: Telegram Bot Test
+on:
+  workflow_dispatch: # 讓你可以手動點擊按鈕執行
+
+jobs:
+  test-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 發送測試訊息
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            你好！這是來自 GitHub Actions 的測試訊息。
+            看到這則訊息代表你的機器人設定成功了！🚀
